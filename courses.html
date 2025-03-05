@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects Taken</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 20px;
+            border: 3px solid #555;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            border-bottom: 3px solid #555;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        h3 {
+            margin-top: 30px;
+            color: #333;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        #searchBar {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #555;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Subjects Taken</h2>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search for subjects...">
+        </div>
+
+        <h3>1st Year - 1st Semester</h3>
+        <table class="subject-table">
+            <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Units</th>
+            </tr>
+            <tr><td>IT112</td><td>Computer Programming 1</td><td>3.0</td></tr>
+            <tr><td>IT111</td><td>Introduction to Computing</td><td>3.0</td></tr>
+            <tr><td>PurCom</td><td>Purposive Communication</td><td>3.0</td></tr>
+            <tr><td>RPH</td><td>Readings in Philippine History</td><td>3.0</td></tr>
+            <tr><td>TCW</td><td>The Contemporary World</td><td>3.0</td></tr>
+            <tr><td>MMW</td><td>Mathematics in the Modern World</td><td>3.0</td></tr>
+            <tr><td>PATH FIT 1</td><td>Movement Enhancement</td><td>2.0</td></tr>
+            <tr><td>NSTP101b</td><td>Civic Welfare Training Service 1</td><td>3.0</td></tr>
+        </table>
+
+        <h3>1st Year - 2nd Semester</h3>
+        <table class="subject-table">
+            <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Units</th>
+            </tr>
+            <tr><td>NSTP102b</td><td>Civic Welfare Training Service 2</td><td>3.0</td></tr>
+            <tr><td>IT121</td><td>Computer Programming 2</td><td>3.0</td></tr>
+            <tr><td>IT122</td><td>Data Structures and Algorithms</td><td>3.0</td></tr>
+            <tr><td>IT123</td><td>Discrete Mathematics</td><td>3.0</td></tr>
+            <tr><td>ArtApp</td><td>Art Appreciation</td><td>3.0</td></tr>
+            <tr><td>UTS</td><td>Understanding the Self</td><td>3.0</td></tr>
+            <tr><td>PATH FIT 2</td><td>Fitness Activity and Exercises</td><td>2.0</td></tr>
+            <tr><td>STS</td><td>Science, Technology and Society</td><td>3.0</td></tr>
+        </table>
+
+        <h3>2nd Year - 1st Semester</h3>
+        <table class="subject-table">
+            <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Units</th>
+            </tr>
+            <tr><td>IT211</td><td>Intro to Human Computer Interaction</td><td>3.0</td></tr>
+            <tr><td>IT212</td><td>Fundamentals of Database Systems</td><td>3.0</td></tr>
+            <tr><td>IT213</td><td>Platform Technologies</td><td>3.0</td></tr>
+            <tr><td>IT214</td><td>Object Oriented Programming</td><td>3.0</td></tr>
+            <tr><td>IT215</td><td>Accounting Principles</td><td>3.0</td></tr>
+            <tr><td>PATH FIT 3</td><td>Physical Activity Towards Health and Fitness 1</td><td>2.0</td></tr>
+            <tr><td>EnviSci</td><td>Environmental Science</td><td>3.0</td></tr>
+        </table>
+
+        <h3>2nd Year - 2nd Semester</h3>
+        <table class="subject-table">
+            <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Units</th>
+            </tr>
+            <tr><td>IT221</td><td>Information Management</td><td>3.0</td></tr>
+            <tr><td>IT222</td><td>Networking 1</td><td>3.0</td></tr>
+            <tr><td>IT223</td><td>Web Systems and Technologies</td><td>3.0</td></tr>
+            <tr><td>IT224</td><td>Systems Integration and Architecture</td><td>3.0</td></tr>
+            <tr><td>Ethc</td><td>Ethics</td><td>3.0</td></tr>
+            <tr><td>Rizal</td><td>Life and Works of Rizal</td><td>3.0</td></tr>
+            <tr><td>PATH FIT 4</td><td>Physical Activity Towards Health and Fitness 2</td><td>2.0</td></tr>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchBar = document.getElementById("searchBar");
+            const tables = document.querySelectorAll(".subject-table");
+
+            searchBar.addEventListener("keyup", function () {
+                const query = searchBar.value.toLowerCase();
+
+                tables.forEach((table) => {
+                    const rows = table.getElementsByTagName("tr");
+                    let hasVisibleRow = false;
+
+                    for (let i = 1; i < rows.length; i++) { // Skip header row
+                        const row = rows[i];
+                        const text = row.innerText.toLowerCase();
+                        const matches = text.includes(query);
+                        row.style.display = matches ? "" : "none";
+                        if (matches) hasVisibleRow = true;
+                    }
+
+                    // Hide section heading if no results
+                    table.previousElementSibling.style.display = hasVisibleRow ? "" : "none";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
